@@ -1,9 +1,16 @@
-import React from 'react';
+import React, {Fragment} from 'react';
+
+import Nav from './components/Nav'
+import Container from './components/Container'
+
 
 function App() {
+
   return (
-    <div className="App">
-    </div>
+    <Fragment>
+      <Nav />
+      <Container/>
+    </Fragment>
   );
 }
 
