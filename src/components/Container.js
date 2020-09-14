@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import FormContext from '../context/formulario/formContext'
 
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 import Formulario from './Formulario'
+import Hoja from './Hoja'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -21,6 +22,11 @@ const useStyles = makeStyles((theme) => ({
 
 const Container = () => {
     const classes = useStyles();
+    const formsContext = useContext(FormContext)
+    const {
+        datosForm
+    } = formsContext
+
     return ( 
         <div className={classes.root}>
             <Grid container spacing={3}>
@@ -28,7 +34,7 @@ const Container = () => {
                     <Formulario/>
                 </Grid>
                 <Grid item md={6} xs={12} sm={6}>
-                    <Paper className={classes.paper}>xs=12</Paper>
+                    <Hoja />
                 </Grid>
             </Grid>
         </div>

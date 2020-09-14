@@ -40,7 +40,8 @@ const Formulario = () => {
     const formsContext = useContext(FormContext)
     const {
         setErrorFormFunc,
-        errorForm
+        errorForm,
+        setDatosForm
     } = formsContext
 
     const [datos, setDatos] = useState({
@@ -57,6 +58,8 @@ const Formulario = () => {
             return
         }
         setErrorFormFunc(false)
+
+        setDatosForm(datos)
             
     }
 
