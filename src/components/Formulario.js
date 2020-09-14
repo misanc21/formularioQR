@@ -3,16 +3,16 @@ import FormContext from '../context/formulario/formContext'
 
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import { Card, CardHeader, CardContent, TextField, Button } from '@material-ui/core';
-import { yellow } from '@material-ui/core/colors';
+import { teal } from '@material-ui/core/colors';
 
 import Error from './Error'
 
 const ColorButton = withStyles((theme) => ({
     root: {
-      color: theme.palette.getContrastText(yellow[500]),
-      backgroundColor: yellow[500],
+      color: theme.palette.getContrastText(teal[500]),
+      backgroundColor: teal[500],
       '&:hover': {
-        backgroundColor: yellow[700],
+        backgroundColor: teal[700],
       },
     },
 }))(Button);
@@ -31,6 +31,12 @@ const useStyles = makeStyles({
     textField: {
         margin: '1rem 0.2rem'
       },
+    letrasHeader: {
+        color: 'white'
+    },
+    rootHeader:{
+        background: '#009688'
+    }
   });
 
 
@@ -73,6 +79,10 @@ const Formulario = () => {
     return (
         <Card className={classes.root}>
             <CardHeader 
+                classes={{
+                    root: classes.rootHeader,
+                    title: classes.letrasHeader
+                }}
                 title="Ingresa los datos"
                 subheader = "todos los datos son requeridos"
             />
@@ -109,7 +119,7 @@ const Formulario = () => {
                         type='submit'
                         variant="contained"
                         color="primary"
-                        className={classes.margin} 
+                        className={classes.buton} 
                         fullWidth
                     >
                         Generar

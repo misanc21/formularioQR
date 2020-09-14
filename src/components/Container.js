@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
 import Formulario from './Formulario'
-import Hoja from './Hoja'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -16,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
       padding: theme.spacing(2),
       textAlign: 'center',
       color: theme.palette.text.secondary,
-    },
+    }
   }));
 
 
@@ -29,12 +28,9 @@ const Container = () => {
 
     return ( 
         <div className={classes.root}>
-            <Grid container spacing={3}>
-                <Grid item md={6} xs={12} sm={6}>
+            <Grid container spacing={3} justify="center">
+                <Grid item  md={6}>
                     <Formulario/>
-                </Grid>
-                <Grid item md={6} xs={12} sm={6}>
-                    <Hoja />
                 </Grid>
             </Grid>
         </div>

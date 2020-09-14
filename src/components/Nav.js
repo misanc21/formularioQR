@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Navbar = styled.nav `
-    background: black;
+    background: #009688;
     margin: 0;
     padding: 0.5rem;
     display: flex;
@@ -10,7 +10,7 @@ const Navbar = styled.nav `
 `
 
 const Titulo = styled.h1 `
-    color: #f5dd42;
+    color: white;
     font-family: 'Kumbh Sans', sans-serif;
     font-size: 2.5rem;
     padding: 0;

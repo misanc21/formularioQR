@@ -13,8 +13,8 @@ body {
   margin: 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background: rgb(198,198,97);
-  background: linear-gradient(193deg, rgba(198,198,97,1) 0%, rgba(182,117,0,1) 100%);
+  background: rgb(97,145,198);
+  background: linear-gradient(193deg, rgba(97,145,198,1) 0%, rgba(0,182,91,1) 100%);
 }
 
 code {

@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^7.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-qrcode-logo": "^2.2.1",
     "react-scripts": "3.4.3",
     "react-to-pdf": "0.0.13",
     "styled-components": "^5.2.0",
