@@ -38,7 +38,7 @@ const Formulario = () => {
     return (
         <Card className={classes.root}>
             <CardHeader 
-                title="Igresa los datos"
+                title="Ingresa los datos"
                 subheader = "todos los datos son requeridos"
             />
             <CardContent>
@@ -64,7 +64,12 @@ const Formulario = () => {
                             shrink: true,
                         }}
                     />
-                    <ColorButton variant="contained" color="primary" className={classes.margin} fullWidth>
+                    <ColorButton 
+                        variant="contained"
+                        color="primary"
+                        className={classes.margin} 
+                        fullWidth
+                    >
                         Generar
                     </ColorButton>
                 </form>
