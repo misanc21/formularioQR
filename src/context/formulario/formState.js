@@ -20,10 +20,17 @@ const FormState = props => {
 
     const [state, dispatch] = useReducer(FormReducer, initialState)
     
+    const setErrorFormFunc = b => {
+        dispatch({
+            type: VALIDAR_FORMULARIO,
+            payload: b
+        })
+    }
 
     return (
         <FormContext.Provider
             value={{
+                setErrorFormFunc,
                 errorForm: state.errorForm
             }}
         >

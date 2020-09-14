@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
+import FormContext from '../context/formulario/formContext'
+
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import { Card, CardHeader, CardContent, TextField, Button } from '@material-ui/core';
 import { yellow } from '@material-ui/core/colors';
 
+import Error from './Error'
 
 const ColorButton = withStyles((theme) => ({
     root: {
@@ -34,6 +37,35 @@ const useStyles = makeStyles({
 
 const Formulario = () => {
     const classes = useStyles();
+    const formsContext = useContext(FormContext)
+    const {
+        setErrorFormFunc,
+        errorForm
+    } = formsContext
+
+    const [datos, setDatos] = useState({
+        cantidad:'',
+        fecha:''
+    })
+    let {cantidad, fecha} = datos
+
+    const handleSubmit = e => {
+        e.preventDefault()
+
+        if(cantidad.trim() === '' || fecha.trim() === ''){
+            setErrorFormFunc(true)
+            return
+        }
+        setErrorFormFunc(false)
+            
+    }
+
+    const handleOnChange = e => {
+        setDatos({
+            ...datos,
+            [e.target.name]: e.target.value
+        })
+    }
 
     return (
         <Card className={classes.root}>
@@ -42,10 +74,14 @@ const Formulario = () => {
                 subheader = "todos los datos son requeridos"
             />
             <CardContent>
-                <form>
+                <form
+                    onSubmit={handleSubmit}
+                >
                     <TextField
                         className={classes.textField}
-                        id="cantidad"
+                        value={cantidad}
+                        onChange={handleOnChange}
+                        name="cantidad"
                         label="Cantidad"
                         placeholder="Inserta la cantidad"
                         fullWidth
@@ -55,7 +91,9 @@ const Formulario = () => {
                     />
                     <TextField
                         className={classes.textField}
-                        id="fecha"
+                        value={fecha}
+                        onChange={handleOnChange}
+                        name="fecha"
                         label="Fecha"
                         type="datetime-local"
                         placeholder="Inserta la fecha"
@@ -64,7 +102,8 @@ const Formulario = () => {
                             shrink: true,
                         }}
                     />
-                    <ColorButton 
+                    <ColorButton
+                        type='submit'
                         variant="contained"
                         color="primary"
                         className={classes.margin} 
@@ -73,6 +112,7 @@ const Formulario = () => {
                         Generar
                     </ColorButton>
                 </form>
+                {errorForm ? <Error msg="todos lo campos son obligatorios"/> : null}
             </CardContent>
         </Card>
     );
