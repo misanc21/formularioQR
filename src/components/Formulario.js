@@ -128,7 +128,7 @@ const Formulario = () => {
                     </ColorButton>
                 </form>
                 {datospdf === ''? null : (
-                    <p>Si no se descarga, da click <a href={datospdf} target="_blank">aqui</a></p>
+                    <p>Si no se descarga, da click <a href={datospdf} target="_blank" rel="noopener noreferrer">aqui</a></p>
                 )}
                 {errorForm ? <Error msg="todos lo campos son obligatorios"/> : null}
             </CardContent>
