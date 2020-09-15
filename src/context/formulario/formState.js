@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-// import {saveAs} from 'file-saver'
+import {saveAs} from 'file-saver'
 
 import FormContext from './formContext'
 import FormReducer from './formReducer'
@@ -44,7 +44,7 @@ const FormState = props => {
         await clienteAxios.get('/api/reporte', {responseType: 'blob'})
         .then(res=> {
             const pdfBlob = new Blob([res.data], {type:'application/pdf'})
-            // saveAs(pdfBlob, 'reporte.pdf')
+            saveAs(pdfBlob, 'reporte.pdf')
             const url = window.URL.createObjectURL(pdfBlob);
             window.open(url, '_blank')
         })
