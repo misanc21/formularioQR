@@ -47,7 +47,8 @@ const Formulario = () => {
     const {
         setErrorFormFunc,
         errorForm,
-        setDatosForm
+        setDatosForm,
+        datospdf
     } = formsContext
 
     const [datos, setDatos] = useState({
@@ -126,6 +127,9 @@ const Formulario = () => {
                         Generar
                     </ColorButton>
                 </form>
+                {datospdf === ''? null : (
+                    <p>Si no se descarga, da click <a href={datospdf} target="_blank">aqui</a></p>
+                )}
                 {errorForm ? <Error msg="todos lo campos son obligatorios"/> : null}
             </CardContent>
         </Card>

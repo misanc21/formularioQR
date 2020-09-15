@@ -1,6 +1,7 @@
 import {
     VALIDAR_FORMULARIO,
-    INSERTAR_DATOSFORM
+    INSERTAR_DATOSFORM,
+    DATOS_PDF
 } from '../../types'
 
 export default (state, action) => {
@@ -14,6 +15,11 @@ export default (state, action) => {
             return({
                 ...state,
                 datosform: action.payload
+            })
+        case DATOS_PDF:
+            return({
+                ...state,
+                datospdf: action.payload
             })
         default:
             return state

@@ -7,7 +7,8 @@ import FormReducer from './formReducer'
 
 import {
     VALIDAR_FORMULARIO,
-    INSERTAR_DATOSFORM
+    INSERTAR_DATOSFORM,
+    DATOS_PDF
 } from '../../types'
 import clienteAxios from '../../config/axios';
 import tokenAuth from '../../config/tokenAuth'
@@ -20,7 +21,8 @@ const FormState = props => {
             fecha:'',
             id:''
         },
-        errorForm: false
+        errorForm: false,
+        datospdf:''
     }
 
     const [state, dispatch] = useReducer(FormReducer, initialState)
@@ -47,6 +49,10 @@ const FormState = props => {
             saveAs(pdfBlob, 'reporte.pdf')
             const url = window.URL.createObjectURL(pdfBlob);
             window.open(url, '_blank')
+            dispatch({
+                type: DATOS_PDF,
+                payload: url
+            })
         })
     }
 
@@ -56,7 +62,8 @@ const FormState = props => {
                 setErrorFormFunc,
                 setDatosForm,
                 errorForm: state.errorForm,
-                datosform: state.datosform
+                datosform: state.datosform,
+                datospdf: state.datospdf
             }}
         >
             {props.children}
