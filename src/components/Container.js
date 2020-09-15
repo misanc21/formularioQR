@@ -1,5 +1,4 @@
-import React, {useContext} from 'react';
-import FormContext from '../context/formulario/formContext'
+import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -21,10 +20,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Container = () => {
     const classes = useStyles();
-    const formsContext = useContext(FormContext)
-    const {
-        datosForm
-    } = formsContext
 
     return ( 
         <div className={classes.root}>
