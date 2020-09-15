@@ -96,6 +96,7 @@ const Formulario = () => {
                         onChange={handleOnChange}
                         name="cantidad"
                         label="Cantidad"
+                        type="number"
                         placeholder="Inserta la cantidad"
                         fullWidth
                         InputLabelProps={{
