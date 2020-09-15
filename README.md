@@ -5,6 +5,7 @@ _Proyecto para generar pdf con qr de datos introducidos Node y React hooks_
 _Poyecto realizado con hooks, especialmente con useContext y useReducer para la manipulacion de los states_ 
 
 * [demo] (https://elated-fermat-32fd73.netlify.app/)
+![myimage-alt-tag](/imgdemo.png)
 
 ## Construido con 🛠️
 _El siguiente proyecto fue construido con las siguientes herramientas_
