@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 
 import Nav from './components/Nav'
 import Container from './components/Container'
@@ -9,10 +9,8 @@ function App() {
 
   return (
     <FormState>
-      <Fragment>
         <Nav />
         <Container/>
-      </Fragment>
     </FormState>
   );
 }

@@ -1,7 +1,9 @@
 import React from 'react';
 
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
+import {
+  makeStyles,
+  Grid 
+} from '@material-ui/core';
 
 import Formulario from './Formulario'
 
@@ -9,11 +11,6 @@ const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
       padding: '2rem'
-    },
-    paper: {
-      padding: theme.spacing(2),
-      textAlign: 'center',
-      color: theme.palette.text.secondary,
     }
   }));
 
